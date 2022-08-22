@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/frontend/admin",
         "index": "apps/frontend/admin/src/index.html",
@@ -17,7 +19,9 @@
           "apps/frontend/admin/src/favicon.ico",
           "apps/frontend/admin/src/assets"
         ],
-        "styles": ["apps/frontend/admin/src/styles.scss"],
+        "styles": [
+          "apps/frontend/admin/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -64,7 +68,10 @@
           "port": 4201
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/frontend/admin/proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -83,12 +90,17 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/frontend/admin"],
+      "outputs": [
+        "coverage/apps/frontend/admin"
+      ],
       "options": {
         "jestConfig": "apps/frontend/admin/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["scope:frontend-admin"]
+  "tags": [
+    "scope:frontend-admin",
+    "type:app"
+  ]
 }
